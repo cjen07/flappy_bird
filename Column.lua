@@ -6,6 +6,7 @@ function Column:init(x, width)
     self.h1 = math.random(20, VIRTUAL_HEIGHT - 200)
     self.h2 = self.h1 + math.random(70, 180)
     self.dx = -10
+    self.scored = false
 end
 
 function Column:update(dt)
@@ -13,6 +14,7 @@ function Column:update(dt)
         self.x = VIRTUAL_WIDTH
         self.h1 = math.random(20, VIRTUAL_HEIGHT - 200)
         self.h2 = self.h1 + math.random(70, 180)
+        self.scored = false
     else
         self.x = self.x + self.dx * dt
     end 
@@ -22,6 +24,7 @@ function Column:reset(x)
     self.x = x
     self.h1 = math.random(20, VIRTUAL_HEIGHT - 200)
     self.h2 = self.h1 + math.random(70, 180)
+    self.scored = false
 end
 
 function Column:render()
